@@ -1,0 +1,646 @@
+/* =========================================
+   BINBAY NAVBAR
+========================================= */
+
+.site-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  z-index: 1000;
+
+  padding: 22px 34px;
+
+  background: rgba(255, 255, 255, 0.92);
+
+  transition:
+    padding 0.4s ease,
+    background 0.4s ease,
+    box-shadow 0.4s ease,
+    backdrop-filter 0.4s ease;
+}
+
+.navbar-inner {
+  width: min(1380px, 100%);
+
+  height: 64px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* =========================================
+   BRAND
+========================================= */
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 15px;
+
+  color: #101613;
+
+  text-decoration: none;
+
+  transition: transform 0.35s ease;
+}
+
+.brand:hover {
+  transform: translateY(-1px);
+}
+
+/* Logo */
+
+.brand-mark {
+  position: relative;
+
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 18px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 12px 35px rgba(8, 72, 52, 0.12);
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.brand:hover .brand-mark {
+  transform: rotate(-3deg) scale(1.04);
+
+  box-shadow:
+    0 16px 40px rgba(8, 127, 91, 0.18);
+}
+
+/* Logo lines */
+
+.brand-line {
+  position: absolute;
+
+  width: 21px;
+  height: 2px;
+
+  border-radius: 20px;
+
+  background: #087f5b;
+}
+
+.brand-line-top {
+  transform: translateY(-5px);
+}
+
+.brand-line-bottom {
+  transform: translateY(5px);
+}
+
+/* Logo dot */
+
+.brand-dot {
+  position: absolute;
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #19b89a;
+
+  box-shadow:
+    0 0 10px rgba(25, 184, 154, 0.5);
+}
+
+/* Brand text */
+
+.brand-name {
+  font-family: "Manrope", sans-serif;
+
+  font-size: 21px;
+  font-weight: 700;
+
+  letter-spacing: -0.7px;
+
+  white-space: nowrap;
+}
+
+.brand-name span {
+  font-weight: 400;
+
+  color: #4d5a55;
+}
+
+/* =========================================
+   DESKTOP NAVIGATION
+========================================= */
+
+.desktop-navigation {
+  display: flex;
+  align-items: center;
+
+  gap: 34px;
+}
+
+.desktop-link {
+  position: relative;
+
+  padding: 7px 0;
+
+  color: #52605a;
+
+  text-decoration: none;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  transition: color 0.3s ease;
+}
+
+.desktop-link::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 0;
+  height: 1.5px;
+
+  border-radius: 10px;
+
+  background: #087f5b;
+
+  transition: width 0.35s ease;
+}
+
+.desktop-link:hover {
+  color: #087f5b;
+}
+
+.desktop-link:hover::after {
+  width: 100%;
+}
+
+/* =========================================
+   CTA
+========================================= */
+
+.navbar-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  min-height: 44px;
+
+  padding: 0 19px;
+
+  border-radius: 100px;
+
+  background: #087f5b;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.navbar-button span {
+  font-size: 17px;
+
+  transition: transform 0.3s ease;
+}
+
+.navbar-button:hover {
+  background: #055c42;
+
+  color: #ffffff;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 25px rgba(8, 127, 91, 0.18);
+}
+
+.navbar-button:hover span {
+  transform: translate(2px, -2px);
+}
+
+/* =========================================
+   SCROLLED NAVBAR
+========================================= */
+
+.site-navbar.is-scrolled {
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  background: rgba(255, 255, 255, 0.78);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 8px 30px rgba(15, 35, 27, 0.06);
+}
+
+.site-navbar.is-scrolled .brand-mark {
+  width: 50px;
+  height: 50px;
+
+  border-radius: 15px;
+}
+
+/* =========================================
+   MOBILE MENU BUTTON
+========================================= */
+
+.menu-toggle {
+  display: none;
+
+  position: relative;
+
+  width: 62px;
+  height: 62px;
+
+  padding: 0;
+
+  border: 1px solid rgba(8, 127, 91, 0.2);
+
+  border-radius: 18px;
+
+  background: rgba(238, 249, 245, 0.8);
+
+  cursor: pointer;
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.menu-toggle:hover {
+  transform: translateY(-2px);
+
+  background: #e8f6f1;
+
+  border-color: rgba(8, 127, 91, 0.4);
+
+  box-shadow:
+    0 10px 25px rgba(8, 127, 91, 0.1);
+}
+
+/* =========================================
+   HAMBURGER
+========================================= */
+
+.hamburger {
+  position: relative;
+
+  display: block;
+
+  width: 25px;
+  height: 20px;
+
+  margin: auto;
+}
+
+.hamburger-line {
+  position: absolute;
+
+  left: 0;
+
+  width: 25px;
+  height: 2px;
+
+  border-radius: 20px;
+
+  background: #087f5b;
+
+  transition:
+    transform 0.35s ease,
+    top 0.35s ease,
+    width 0.35s ease;
+}
+
+.hamburger-top {
+  top: 2px;
+}
+
+.hamburger-bottom {
+  top: 16px;
+}
+
+.hamburger-dot {
+  position: absolute;
+
+  top: 9px;
+  left: 50%;
+
+  width: 4px;
+  height: 4px;
+
+  border-radius: 50%;
+
+  background: #19b89a;
+
+  transform: translateX(-50%);
+
+  box-shadow:
+    0 0 8px rgba(25, 184, 154, 0.5);
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.3s ease;
+}
+
+/* =========================================
+   HAMBURGER ACTIVE
+========================================= */
+
+.menu-toggle.active {
+  background: #087f5b;
+
+  border-color: #087f5b;
+}
+
+.menu-toggle.active .hamburger-line {
+  background: #ffffff;
+}
+
+.menu-toggle.active .hamburger-dot {
+  opacity: 0;
+
+  transform: translateX(-50%) scale(0);
+}
+
+/* =========================================
+   MOBILE NAVIGATION
+========================================= */
+
+.mobile-navigation {
+  display: none;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1050px) {
+
+  .desktop-navigation {
+    gap: 23px;
+  }
+
+  .desktop-link {
+    font-size: 12px;
+  }
+
+  .navbar-button {
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 900px) {
+
+  .site-navbar {
+    padding: 15px 22px;
+  }
+
+  .desktop-navigation,
+  .navbar-button {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  /* Mobile fullscreen menu */
+
+  .mobile-navigation {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100dvh;
+
+    display: block;
+
+    background: #f6faf8;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-15px);
+
+    transition:
+      opacity 0.35s ease,
+      visibility 0.35s ease,
+      transform 0.35s ease;
+  }
+
+  .mobile-navigation.open {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+  }
+
+  .mobile-navigation-inner {
+    width: min(700px, 100%);
+
+    height: 100%;
+
+    margin: 0 auto;
+
+    padding:
+      120px
+      30px
+      35px;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Menu label */
+
+  .mobile-menu-label {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+
+    color: #7b8a84;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+  }
+
+  /* Links */
+
+  .mobile-links {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mobile-link {
+    display: grid;
+
+    grid-template-columns: 38px 1fr 30px;
+
+    align-items: center;
+
+    min-height: 70px;
+
+    border-bottom: 1px solid #dce7e2;
+
+    color: #14221d;
+
+    text-decoration: none;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 25px;
+    font-weight: 600;
+
+    opacity: 0;
+
+    transform: translateY(18px);
+
+    transition:
+      color 0.3s ease,
+      opacity 0.4s ease,
+      transform 0.4s ease;
+  }
+
+  .mobile-navigation.open .mobile-link {
+    opacity: 1;
+
+    transform: translateY(0);
+
+    transition-delay: var(--delay);
+  }
+
+  .mobile-link:hover {
+    color: #087f5b;
+  }
+
+  .mobile-link-number {
+    color: #9aaba4;
+
+    font-size: 10px;
+    font-weight: 600;
+  }
+
+  .mobile-link-arrow {
+    color: #087f5b;
+
+    font-size: 20px;
+
+    text-align: right;
+  }
+
+  /* Mobile CTA */
+
+  .mobile-recycle-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top: 30px;
+
+    min-height: 52px;
+
+    border-radius: 100px;
+
+    background: #087f5b;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 14px;
+    font-weight: 700;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .site-navbar {
+    padding: 12px 15px;
+  }
+
+  .navbar-inner {
+    height: 58px;
+  }
+
+  .brand {
+    gap: 11px;
+  }
+
+  .brand-mark {
+    width: 52px;
+    height: 52px;
+
+    border-radius: 16px;
+  }
+
+  .brand-name {
+    font-size: 18px;
+  }
+
+  .menu-toggle {
+    width: 50px;
+    height: 50px;
+
+    border-radius: 15px;
+  }
+
+  .mobile-navigation-inner {
+    padding:
+      105px
+      22px
+      25px;
+  }
+
+  .mobile-link {
+    min-height: 64px;
+
+    font-size: 21px;
+  }
+}
