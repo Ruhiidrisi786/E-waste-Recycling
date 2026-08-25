@@ -1,6 +1,6 @@
 import Navbar from "../components/Navbar/Navbar";
 import Hero from "../components/Hero/Hero";
-// import HowItWorks from "../components/HowItWorks/HowItWorks";
+import HowItWorks from "../components/HowItWorks/HowItWorks";
 // import Machine from "../components/Machine/Machine";
 // import Impact from "../components/Impact/Impact";
 // import Services from "../components/Services/Services";
@@ -14,8 +14,8 @@ function Home() {
 
       <main>
         <Hero />
-        {/* <HowItWorks />
-        <Machine />
+        <HowItWorks />
+        {/* <Machine />
         <Impact />
         <Services />
         <Testimonials /> */}
